@@ -13,12 +13,13 @@ public class Main {
         String input = "";
         String lastval = "0";
         
+        System.out.println("Welcome.");
         while (input != null) {
             input = cons.readLine("Enter equation: ");
             operations = Arrays.asList(input.split(" "));
             if (input.equalsIgnoreCase("exit")) {
                 System.err.println("Bye bye");
-                System.exit(0);
+                System.exit(1);
             }
 
             if (operations.size() < 3) {
@@ -32,7 +33,7 @@ public class Main {
             if(operations.get(2).equalsIgnoreCase("$last")){
                 operations.set(2, lastval);
             }
-            
+
             Float op1 = Float.parseFloat(operations.get(0));
             Float op2 = Float.parseFloat(operations.get(2));
             Float res = 0.f;
